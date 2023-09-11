@@ -13,6 +13,10 @@ class InventoryControl extends React.Component {
     };
   }
 
+  handleSelectedComponentSwap = (newSelectedComponent) => {
+    this.setState({selectedComponent: newSelectedComponent});
+  }
+
   render() {
     let currentView = null;
     switch(this.state.selectedComponent) {
@@ -30,7 +34,7 @@ class InventoryControl extends React.Component {
     }
     return (
       <React.Fragment>
-        <NavBar />
+        <NavBar onClickNavButton={this.handleSelectedComponentSwap}/>
         {currentView}
       </React.Fragment>
     );

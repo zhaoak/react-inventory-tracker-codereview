@@ -1,9 +1,14 @@
 
 function NavBar(props) {
+
+  function handleNavButtonClick(selectedComponent) {
+    props.onClickNavButton(selectedComponent);
+  }
+
   return (
     <nav>
-    <button type="button" >Inventory List</button>
-    <button type="button" >Add Item</button>
+    <button type="button" onClick={() => handleNavButtonClick("InventoryList")}>Inventory List</button>
+    <button type="button" onClick={() => handleNavButtonClick("InventoryAddItem")}>Add Item</button>
     </nav>
   );
 }
