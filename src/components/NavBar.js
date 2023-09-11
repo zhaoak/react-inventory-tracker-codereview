@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 
 function NavBar(props) {
 
@@ -12,5 +13,9 @@ function NavBar(props) {
     </nav>
   );
 }
+
+NavBar.propTypes = {
+  onClickNavButton: PropTypes.func
+};
 
 export default NavBar;

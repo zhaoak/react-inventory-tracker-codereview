@@ -32,6 +32,7 @@ class InventoryControl extends React.Component {
       default:
         currentView = <InventoryList />
     }
+
     return (
       <React.Fragment>
         <NavBar onClickNavButton={this.handleSelectedComponentSwap}/>
