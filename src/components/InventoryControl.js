@@ -2,6 +2,7 @@ import React from 'react';
 import InventoryList from './InventoryList';
 import InventoryDetail from './InventoryDetail';
 import InventoryAddItem from './InventoryAddItem';
+import NavBar from './NavBar';
 
 class InventoryControl extends React.Component {
 
@@ -29,6 +30,7 @@ class InventoryControl extends React.Component {
     }
     return (
       <React.Fragment>
+        <NavBar />
         {currentView}
       </React.Fragment>
     );
