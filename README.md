@@ -10,6 +10,10 @@ Simple React application that tracks inventory for a fictional coffeeshop. Allow
 - JS, HTML5, CSS
 - create-react-app
 
+## Component Diagram
+
+!{component diagram showing application structure}[./component-diagram.png]
+
 ## Setup/Installation
 
 ### To run, use:
