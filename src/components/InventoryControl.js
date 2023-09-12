@@ -9,7 +9,7 @@ class InventoryControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      itemList: null,
+      itemList: [],
       selectedComponent: "InventoryList",
       selectedItem: null
     };
@@ -19,7 +19,10 @@ class InventoryControl extends React.Component {
     this.setState({selectedComponent: newSelectedComponent});
   }
 
-  
+  handleAddingNewItemToList = (newItem) => {
+    const newItemList = this.state.itemList.concat(newItem);
+    this.setState({itemList: newItemList, selectedComponent: "InventoryList"});
+  }
 
   render() {
     // view swapping logic

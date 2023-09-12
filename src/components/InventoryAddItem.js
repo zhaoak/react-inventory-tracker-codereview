@@ -2,26 +2,24 @@
 function InventoryAddItem(props) {
   function handleNewItemFormSubmission(event) {
     event.preventDefault();
-    console.log(event.target.name.value);
-    console.log(event.target.origin.value);
-    console.log(event.target.price.value);
-    console.log(event.target.roast.value);
+
+    }
   }
 
   return (
     <section className="add-item-form">
     <h3>Add new coffee sack to inventory</h3>
     <form onSubmit={handleNewItemFormSubmission}>
-    <input type='text' name='name' placeholder='blend name...'/>
+    <input type='text' name='name' placeholder='blend name...' required />
     <br/>
-    <input type='text' name='origin' placeholder='country of origin...' />
+    <input type='text' name='origin' placeholder='country of origin...' required />
     <br/>
     <label htmlFor='price'>Price (dollars): 
-    <input type='number' name='price' defaultValue='8' id='price' />
+    <input type='number' name='price' defaultValue='8' min='1' id='price' />
     </label>
     <div>
     <label htmlFor='lightroast'>Light Roast
-    <input type='radio' name='roast' value='light' id='lightroast' />
+    <input type='radio' name='roast' value='light' id='lightroast' required />
     </label>
     <br/>
     <label htmlFor='mediumroast'>Medium Roast
