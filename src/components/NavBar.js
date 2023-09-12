@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 function NavBar(props) {
 
   function handleNavButtonClick(selectedComponent) {
+    // pass in string containing name of component to switch to that component
     props.onClickNavButton(selectedComponent);
   }
 
