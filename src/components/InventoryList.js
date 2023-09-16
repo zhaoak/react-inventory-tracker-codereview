@@ -1,4 +1,5 @@
 import InventoryItem from './InventoryItem';
+import PropTypes from 'prop-types';
 
 function InventoryList(props) {
   return (
@@ -19,5 +20,11 @@ function InventoryList(props) {
     </section>
   );
 }
+
+InventoryList.propTypes = {
+  itemList: PropTypes.object,
+  onClickListItem: PropTypes.func,
+  onClickPurchaseButton: PropTypes.func
+};
 
 export default InventoryList;

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 
 function InventoryDetail(props) {
   return (
@@ -11,5 +12,9 @@ function InventoryDetail(props) {
     </section>
   );
 }
+
+InventoryDetail.propTypes = {
+  selectedItem: PropTypes.object
+};
 
 export default InventoryDetail;

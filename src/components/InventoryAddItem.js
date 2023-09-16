@@ -8,7 +8,7 @@ function InventoryAddItem(props) {
     props.onAddNewItem({
       name: event.target.name.value,
       origin: event.target.origin.value,
-      price: event.target.price.value,
+      price: parseInt(event.target.price.value),
       roast: event.target.roast.value,
       quantity: 130, // quantity, in pounds, of remaining beans in sack
       id: v4()
