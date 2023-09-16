@@ -16,7 +16,7 @@ class InventoryControl extends React.Component {
   }
 
   handleSelectedComponentSwap = (newSelectedComponent) => {
-    this.setState({selectedComponent: newSelectedComponent});
+    this.setState({selectedComponent: newSelectedComponent, selectedItem: null});
   }
 
   handleAddingNewItemToList = (newItem) => {
@@ -25,15 +25,20 @@ class InventoryControl extends React.Component {
     this.setState({itemList: newItemList, selectedComponent: "InventoryList"});
   }
 
+  handleSelectingItemFromList = (id) => {
+    const selectedItem = this.state.itemList.filter(item => item.id === id)[0];
+    this.setState({selectedItem: selectedItem, selectedComponent: "InventoryDetail"});
+  }
+
   render() {
     // view swapping logic
     let currentView = null;
     switch(this.state.selectedComponent) {
       case "InventoryList":
-        currentView = <InventoryList itemList={this.state.itemList} />
+        currentView = <InventoryList itemList={this.state.itemList} onClickListItem={this.handleSelectingItemFromList} />
         break;
       case "InventoryDetail":
-        currentView = <InventoryDetail />
+        currentView = <InventoryDetail selectedItem={this.state.selectedItem} />
         break;
       case "InventoryAddItem":
         currentView = <InventoryAddItem onAddNewItem={this.handleAddingNewItemToList} />

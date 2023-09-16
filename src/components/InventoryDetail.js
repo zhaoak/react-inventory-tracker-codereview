@@ -1,7 +1,14 @@
 
 function InventoryDetail(props) {
   return (
-    <h3>inventory detail placeholder</h3>
+    <section className="inventory-item-detail">
+      <h2>{props.selectedItem.name} Details</h2>
+      <h3>${props.selectedItem.price} per pound</h3>
+      <h4><em>origin: {props.selectedItem.origin}</em></h4>
+      <h4>{props.selectedItem.roast} roast</h4>
+      <h3>{props.selectedItem.quantity} pounds remaining in inventory</h3>
+      <h1>update button go here</h1>
+    </section>
   );
 }
 

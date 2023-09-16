@@ -10,6 +10,9 @@ function InventoryList(props) {
           price={item.price}
           roast={item.roast}
           quantity={item.quantity}
+          id={item.id}
+          key={item.id}
+          onClickListItem={props.onClickListItem}
         />
     )}
     </section>
