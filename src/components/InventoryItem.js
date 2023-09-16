@@ -6,15 +6,22 @@ function InventoryItem(props) {
       props.onClickPurchaseButton(event.target.amount.value, props.id);
     }
 
+  const componentStyling = {
+    backgroundColor: '#f1ecd2',
+    margin: '1% 5%',
+    padding: '1em 1em',
+    border: '2px solid',
+    textAlign: 'center'
+  }
+
   return (
-    <section className="inventory-item">
+    <section style={componentStyling} >
       <div className="inventory-item-info" onClick={() => props.onClickListItem(props.id)}>
-        <h3>{props.name}</h3>
-        <h4><em>origin: {props.origin}</em></h4>
-        <h2>${props.price}</h2>
-        <h4>{props.roast} roast</h4>
+        <h2>{props.name}</h2>
+        <h2><u>${props.price}</u></h2>
         <h4>{props.quantity} pounds remaining</h4>
       </div>
+      <hr />
       <form className="inventory-item-purchase-form" onSubmit={handlePurchaseItem}>
         <h5>Purchase this coffee:</h5>
         <label>Quantity (lbs.): 
