@@ -29,7 +29,7 @@ class InventoryControl extends React.Component {
     let currentView = null;
     switch(this.state.selectedComponent) {
       case "InventoryList":
-        currentView = <InventoryList />
+        currentView = <InventoryList itemList={this.state.itemList} />
         break;
       case "InventoryDetail":
         currentView = <InventoryDetail />
@@ -38,7 +38,7 @@ class InventoryControl extends React.Component {
         currentView = <InventoryAddItem onAddNewItem={this.handleAddingNewItemToList} />
         break;
       default:
-        currentView = <InventoryList />
+        currentView = <InventoryList itemList={this.state.itemList} />
     }
 
     return (
