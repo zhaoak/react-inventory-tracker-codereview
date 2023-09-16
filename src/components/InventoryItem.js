@@ -6,6 +6,7 @@ function InventoryItem(props) {
       <h4><em>origin: {props.origin}</em></h4>
       <h2>${props.price}</h2>
       <h4>{props.roast} roast</h4>
+      <h4>{props.quantity} pounds remaining</h4>
     </div>
   );
 }

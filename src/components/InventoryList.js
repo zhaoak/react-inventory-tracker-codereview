@@ -9,6 +9,7 @@ function InventoryList(props) {
           origin={item.origin}
           price={item.price}
           roast={item.roast}
+          quantity={item.quantity}
         />
     )}
     </section>

@@ -21,6 +21,7 @@ class InventoryControl extends React.Component {
 
   handleAddingNewItemToList = (newItem) => {
     const newItemList = this.state.itemList.concat(newItem);
+    // set state to updated list and switch to list component
     this.setState({itemList: newItemList, selectedComponent: "InventoryList"});
   }
 
