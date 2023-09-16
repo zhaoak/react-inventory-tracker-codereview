@@ -35,7 +35,7 @@ class InventoryControl extends React.Component {
         currentView = <InventoryDetail />
         break;
       case "InventoryAddItem":
-        currentView = <InventoryAddItem />
+        currentView = <InventoryAddItem onAddNewItem={this.handleAddingNewItemToList} />
         break;
       default:
         currentView = <InventoryList />

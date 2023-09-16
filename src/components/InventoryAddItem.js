@@ -1,10 +1,18 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import { v4 } from 'uuid';
 
 function InventoryAddItem(props) {
   function handleNewItemFormSubmission(event) {
     event.preventDefault();
-
+    props.onAddNewItem({
+      name: event.target.name.value,
+      origin: event.target.origin.value,
+      price: event.target.price.value,
+      roast: event.target.roast.value,
+      id: v4()
+    });
     }
-  }
 
   return (
     <section className="add-item-form">
@@ -36,5 +44,9 @@ function InventoryAddItem(props) {
 
   );
 }
+
+InventoryAddItem.propTypes = {
+  onAddNewItem: PropTypes.func
+};
 
 export default InventoryAddItem;
