@@ -30,12 +30,23 @@ class InventoryControl extends React.Component {
     this.setState({selectedItem: selectedItem, selectedComponent: "InventoryDetail"});
   }
 
+  handlePurchaseFromInventoryItem = (amount, id) => {
+    const purchasedItem = this.state.itemList.filter(item => item.id === id)[0];
+    if (purchasedItem.quantity < amount)
+      return;
+    else {
+      purchasedItem.quantity -= amount;
+      const modifiedItemList = this.state.itemList.filter(item => item.id !== id).concat(purchasedItem);
+      this.setState({itemList: modifiedItemList});
+    }
+  }
+
   render() {
     // view swapping logic
     let currentView = null;
     switch(this.state.selectedComponent) {
       case "InventoryList":
-        currentView = <InventoryList itemList={this.state.itemList} onClickListItem={this.handleSelectingItemFromList} />
+        currentView = <InventoryList itemList={this.state.itemList} onClickListItem={this.handleSelectingItemFromList} onClickPurchaseButton={this.handlePurchaseFromInventoryItem} />
         break;
       case "InventoryDetail":
         currentView = <InventoryDetail selectedItem={this.state.selectedItem} />

@@ -13,6 +13,7 @@ function InventoryList(props) {
           id={item.id}
           key={item.id}
           onClickListItem={props.onClickListItem}
+          onClickPurchaseButton={props.onClickPurchaseButton}
         />
     )}
     </section>
