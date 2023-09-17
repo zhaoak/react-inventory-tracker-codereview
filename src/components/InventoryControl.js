@@ -43,8 +43,19 @@ class InventoryControl extends React.Component {
   }
 
   handleDeleteItemFromInventory = (id) => {
+    const itemToDelete = this.state.itemList.filter(item => item.id === id)[0];
+    if (itemToDelete.quantity > 0) {
+      if (window.confirm("Remove item from inventory? There is still coffee remaining!")) {
+        const modifiedItemList = this.state.itemList.filter(item => item.id !== id);
+        this.setState({itemList: modifiedItemList});
+      }
+      else {
+        return;
+      }
+    } else {
     const modifiedItemList = this.state.itemList.filter(item => item.id !== id);
     this.setState({itemList: modifiedItemList});
+    }
   }
 
   render() {
@@ -52,7 +63,7 @@ class InventoryControl extends React.Component {
     let currentView = null;
     switch(this.state.selectedComponent) {
       case "InventoryList":
-        currentView = <InventoryList itemList={this.state.itemList} onClickListItem={this.handleSelectingItemFromList} onClickPurchaseButton={this.handlePurchaseFromInventoryItem} />
+        currentView = <InventoryList itemList={this.state.itemList} onClickListItem={this.handleSelectingItemFromList} onClickPurchaseButton={this.handlePurchaseFromInventoryItem} onClickDeleteButton={this.handleDeleteItemFromInventory} />
         break;
       case "InventoryDetail":
         currentView = <InventoryDetail selectedItem={this.state.selectedItem} />

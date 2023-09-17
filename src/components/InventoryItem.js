@@ -6,6 +6,11 @@ function InventoryItem(props) {
       props.onClickPurchaseButton(event.target.amount.value, props.id);
     }
 
+    function handleDeleteItem(event) {
+      event.preventDefault();
+      props.onClickDeleteButton(props.id);
+    }
+
   const componentStyling = {
     backgroundColor: '#f1ecd2',
     margin: '1% 5%',
@@ -29,6 +34,10 @@ function InventoryItem(props) {
         </label>
         <button type='submit'>Purchase</button>
       </form>
+      <hr />
+      <form onSubmit={handleDeleteItem}>
+        <button type='submit'>Delete item from inventory</button>
+      </form>
     </section>
   );
 }
@@ -41,7 +50,8 @@ InventoryItem.propTypes = {
   quantity: PropTypes.number,
   id: PropTypes.string,
   onClickListItem: PropTypes.func,
-  onClickPurchaseButton: PropTypes.func
+  onClickPurchaseButton: PropTypes.func,
+  onClickDeleteButton: PropTypes.func
 };
 
 export default InventoryItem;

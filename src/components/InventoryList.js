@@ -26,6 +26,7 @@ function InventoryList(props) {
           key={item.id}
           onClickListItem={props.onClickListItem}
           onClickPurchaseButton={props.onClickPurchaseButton}
+          onClickDeleteButton={props.onClickDeleteButton}
         />
     )}
     </section>
@@ -35,7 +36,8 @@ function InventoryList(props) {
 InventoryList.propTypes = {
   itemList: PropTypes.array,
   onClickListItem: PropTypes.func,
-  onClickPurchaseButton: PropTypes.func
+  onClickPurchaseButton: PropTypes.func,
+  onClickDeleteButton: PropTypes.func
 };
 
 export default InventoryList;
