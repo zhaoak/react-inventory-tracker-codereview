@@ -1,14 +1,21 @@
 import PropTypes from 'prop-types';
 
 function InventoryDetail(props) {
+  const componentStyling = {
+    backgroundColor: '#f1ddd2',
+    margin: '1% 5%',
+    padding: '1em 1em',
+    border: '2px solid',
+    textAlign: 'center'
+  }
+
   return (
-    <section className="inventory-item-detail">
+    <section style={componentStyling}>
       <h2>{props.selectedItem.name} Details</h2>
-      <h3>${props.selectedItem.price} per pound</h3>
-      <h4><em>origin: {props.selectedItem.origin}</em></h4>
-      <h4>{props.selectedItem.roast} roast</h4>
+      <h3><u>${props.selectedItem.price} per pound</u></h3>
+      <p>origin: {props.selectedItem.origin}</p>
+      <p>{props.selectedItem.roast} roast</p>
       <h3>{props.selectedItem.quantity} pounds remaining in inventory</h3>
-      <h1>update button go here</h1>
     </section>
   );
 }

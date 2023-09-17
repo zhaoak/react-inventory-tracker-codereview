@@ -16,15 +16,14 @@ Simple React application that tracks inventory for a fictional coffeeshop. Allow
 
 ## Setup/Installation
 
-### To run, use:
+### To run, in the project directory, use:
 
 #### `npm start`
 
 This will build and run the project.
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+By default, the server will listen on port 3000, but this may be changed by setting the `PORT` environment variable.
+The page will reload when you make changes.
 
 ## Known Bugs
 

@@ -1,7 +1,7 @@
 
 function Header() {
   return (
-    <h2>Inventory Tracking System</h2>
+    <h2 style={{textAlign: 'center'}}>Inventory Tracking System</h2>
   );
 }
 

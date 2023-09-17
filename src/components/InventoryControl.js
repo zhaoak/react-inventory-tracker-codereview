@@ -42,6 +42,11 @@ class InventoryControl extends React.Component {
     }
   }
 
+  handleDeleteItemFromInventory = (id) => {
+    const modifiedItemList = this.state.itemList.filter(item => item.id !== id);
+    this.setState({itemList: modifiedItemList});
+  }
+
   render() {
     // view swapping logic
     let currentView = null;

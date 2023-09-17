@@ -15,9 +15,18 @@ function InventoryAddItem(props) {
     });
     }
 
+  const componentStyling = {
+    backgroundColor: '#e5a9a4',
+    border: '2px solid',
+    textAlign: 'center',
+    margin: '5% 5%',
+    padding: '1em 1em'
+  };
+
   return (
-    <section className="add-item-form">
+    <section style={componentStyling}>
     <h3>Add new coffee sack to inventory</h3>
+    <hr />
     <form onSubmit={handleNewItemFormSubmission}>
     <input type='text' name='name' placeholder='blend name...' required />
     <br/>

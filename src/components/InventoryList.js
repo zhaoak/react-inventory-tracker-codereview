@@ -2,9 +2,20 @@ import InventoryItem from './InventoryItem';
 import PropTypes from 'prop-types';
 
 function InventoryList(props) {
+
+  const componentStyling = {
+    textAlign: 'center',
+    display: 'flex',
+    flexFlow: 'row wrap',
+    justifyContent: 'space-around'
+  };
+
+  if (props.itemList.length === 0) {
+    return <p style={{textAlign: 'center'}}><em>No items in inventory.</em></p>;
+  } else {
   return (
     // map each item to an InventoryItem element
-    <section className="item-list">
+    <section style={componentStyling}>
     {props.itemList.map((item) => 
       <InventoryItem name={item.name}
           origin={item.origin}
@@ -18,11 +29,11 @@ function InventoryList(props) {
         />
     )}
     </section>
-  );
+  );}
 }
 
 InventoryList.propTypes = {
-  itemList: PropTypes.object,
+  itemList: PropTypes.array,
   onClickListItem: PropTypes.func,
   onClickPurchaseButton: PropTypes.func
 };
